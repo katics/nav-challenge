@@ -11,6 +11,6 @@ export const ROUTE_COMPONENTS = [
     path: APP_ROUTES.dashboard,
     component: COMPONENT_PAGES.dashboard,
     title: "Dashboard",
-    // protected: true;
+    // protected: true; TODO Later in project decide if route is protected
   },
 ];
