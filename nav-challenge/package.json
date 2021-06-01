@@ -10,9 +10,16 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "5.1.7",
+    "husky": "4.3.0",
+    "node-sass": "5.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "5.1.2",
     "react-scripts": "4.0.3",
+    "redux": "4.0.5",
+    "redux-saga": "^1.1.3",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -20,7 +27,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.{js,jsx,tsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,tsx}\" --quiet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run format && yarn run lint",
+      "pre-push": "yarn run format && yarn run lint"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.16",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
     "eslint": "^7.27.0",

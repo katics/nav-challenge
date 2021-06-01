@@ -1,8 +1,14 @@
-import React from "react";
-import "./App.css";
+import { FC } from "react";
+import "./App.scss";
+import Layout from "./components/layout/Layout";
+import RouteCreator from "./utils/RouteCreator";
 
-function App(): any {
-  return <div>NAV-CHALLENGE</div>;
-}
+const App: FC = () => {
+  return (
+    <Layout>
+      <RouteCreator />
+    </Layout>
+  );
+};
 
 export default App;
