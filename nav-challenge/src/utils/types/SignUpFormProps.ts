@@ -2,6 +2,7 @@ import { UserSignUpDataType } from "./UserSignUpDataType";
 
 export interface SignUpFormProps {
   signUpData: UserSignUpDataType;
+  selectedDate: string;
   firstNameChanged: (e: any) => void;
   lastNamChanged: (e: any) => void;
   emailChanged: (e: any) => void;

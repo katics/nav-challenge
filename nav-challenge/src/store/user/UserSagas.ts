@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, takeLatest } from "redux-saga/effects";
 import { signUpUserAPI } from "../../utils/api";
 import { SIGNUP_USER } from "./UserActionTypes";
 import * as toastr from "toastr";
@@ -10,12 +10,16 @@ export function* signUpUser(action: any): any {
     //TODO Get response data and reddirect user to signIn page
   } catch (err) {
     console.log("ERROR: " + err.statusText);
-    toastr.error("Error, user not signed up. Please try again");
-
-    //TODO Show erros on UI
+    displayErrorMessages(err.data);
   }
 }
 
 export default function* userSagas(): any {
   yield takeLatest(SIGNUP_USER, signUpUser);
 }
+
+const displayErrorMessages = (data: []) => {
+  for (const prop in data) {
+    toastr.error(prop + ": " + data[prop]);
+  }
+};

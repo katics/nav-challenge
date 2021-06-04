@@ -1,9 +1,5 @@
 import { UserDataType } from "../../utils/types/UserDataType";
-import {
-  SIGNUP_USER,
-  SIGNUP_USER_ERROR,
-  SIGNUP_USER_SUCCESS,
-} from "./UserActionTypes";
+import { SIGNUP_USER } from "./UserActionTypes";
 
 const initialState: UserDataType = {
   currentUser: {

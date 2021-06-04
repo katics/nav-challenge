@@ -18,6 +18,7 @@ const SignUpPage: FC = () => {
         usernameChanged={signUpData.usernameChanged}
         passwordChanged={signUpData.passwordChanged}
         dateOfBirthChanged={signUpData.dateOfBirthChanged}
+        selectedDate={signUpData.selectedDate}
       />
     </SignInSignUpLayout>
   );

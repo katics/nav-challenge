@@ -36,10 +36,10 @@ const SignUpContainer: FC = () => {
   const signUpClick = (e: any) => {
     e.preventDefault();
 
-    const selectedDate = moment(signUpDataRequest.dateOfBirth);
+    const selectedDateForRequest = moment(selectedDate);
 
-    signUpDataRequest.dateOfBirth = selectedDate.isValid()
-      ? selectedDate.format("DD/MM/YYYY")
+    signUpDataRequest.dateOfBirth = selectedDateForRequest.isValid()
+      ? selectedDateForRequest.format("DD/MM/YYYY")
       : "";
 
     userDispatch(fetchRegisterUser(signUpDataRequest));
@@ -81,10 +81,7 @@ const SignUpContainer: FC = () => {
   };
 
   const dateOfBirthChanged = (e: any) => {
-    setSignUpDataRequest({
-      ...signUpDataRequest,
-      dateOfBirth: e.target.value,
-    });
+    setSelectedDate(e.target.value);
   };
 
   const contextValue: SignUpFormProps = {
@@ -96,6 +93,7 @@ const SignUpContainer: FC = () => {
     usernameChanged: usernameChanged,
     passwordChanged: passwordChanged,
     dateOfBirthChanged: dateOfBirthChanged,
+    selectedDate: selectedDate,
   };
 
   return (

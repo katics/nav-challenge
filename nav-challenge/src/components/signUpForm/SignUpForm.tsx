@@ -12,8 +12,9 @@ interface SignUpFormProps {
   passwordChanged: (e: any) => void;
   dateOfBirthChanged: (e: any) => void;
   singUpClick: (e: any) => void;
+  selectedDate: string;
 }
-
+//CHECK if component props are necessary or we can us context from container component ?
 const SignUpForm: FC<SignUpFormProps> = ({
   signUpData,
   singUpClick,
@@ -23,6 +24,7 @@ const SignUpForm: FC<SignUpFormProps> = ({
   usernameChanged,
   passwordChanged,
   dateOfBirthChanged,
+  selectedDate,
 }) => {
   return (
     <div className=" card col-sm-6 py-2 form-container form-margin">
@@ -81,7 +83,7 @@ const SignUpForm: FC<SignUpFormProps> = ({
           <div className="form-group col-sm-13">
             <FormFieldSet
               type="date"
-              inputValue={signUpData.dateOfBirth}
+              inputValue={selectedDate}
               label="Date of birth"
               placeHolder=""
               handleChange={dateOfBirthChanged}
@@ -95,7 +97,7 @@ const SignUpForm: FC<SignUpFormProps> = ({
         </form>
         <hr></hr>
         <h6 className="text-center">
-          {/* TODO late on add link to sign in form */}
+          {/* TODO later on add link to sign in form */}
           Already have and account?{" "}
           <span className="text-primary">Sign In</span>
         </h6>
