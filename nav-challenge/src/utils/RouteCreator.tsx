@@ -3,12 +3,12 @@ import { Switch, Route } from "react-router-dom";
 
 import { ROUTE_COMPONENTS, COMPONENT_PAGES } from "./AppRoutes";
 import Dashboard from "../components/dashboard/Dashboard";
-import SignUp from "../components/signUp/SignUp";
+import SignUpContainer from "../components/containers/signUpContainer/SignUpContainer";
 
 const components = {
   blank: undefined,
   [COMPONENT_PAGES.dashboard]: Dashboard,
-  [COMPONENT_PAGES.signUp]: SignUp,
+  [COMPONENT_PAGES.signUp]: SignUpContainer,
 };
 
 const RouteCreator: FC = () => {

@@ -1,0 +1,50 @@
+$theme-color: rgb(162, 40, 243);
+
+.signup-container {
+  height: 100vh;
+  margin: 0;
+  display: flexbox;
+}
+.signup-left {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 500% 500%;
+  animation: gradient 7s ease infinite;
+  color: whitesmoke;
+}
+.signup-right {
+  background-color: #edf2f7;
+  height: 100vh;
+  align-items: center;
+}
+.center {
+  display: block;
+  margin: auto;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.signup-form-title {
+  margin-top: 10px;
+}
+.form-margin {
+  margin-left: 25%;
+}
+.form-container {
+  display: inline-block;
+
+  border-top: 2px solid $theme-color;
+}
+
+.register-button {
+  background-color: $theme-color;
+  color: whitesmoke;
+  border-radius: 15px;
+}
