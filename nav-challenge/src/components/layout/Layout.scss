@@ -1,8 +1,10 @@
+$background-color: rgb(216, 255, 110);
+
 html,
 body {
   height: 100%;
 }
 .main-wrapper {
-  background-color: rgb(216, 255, 110);
+  background-color: $background-color;
   height: 100vh;
 }

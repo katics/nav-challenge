@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
+
 import Logo from "../../../assets/images/Logo.png";
+
 import "./SignInSignUpLayout.scss";
 
 interface SignInSignUpLayoutProps {

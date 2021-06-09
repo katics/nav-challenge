@@ -1,7 +1,10 @@
 import { call, takeLatest } from "redux-saga/effects";
+
 import { signUpUserAPI } from "../../utils/api";
+
 import { SIGNUP_USER } from "./UserActionTypes";
-import * as toastr from "toastr";
+
+import toastr from "toastr";
 
 export function* signUpUser(action: any): any {
   try {
@@ -18,8 +21,8 @@ export default function* userSagas(): any {
   yield takeLatest(SIGNUP_USER, signUpUser);
 }
 
-const displayErrorMessages = (data: []) => {
-  for (const prop in data) {
-    toastr.error(prop + ": " + data[prop]);
-  }
+const displayErrorMessages = (data: { key: string; value: [] }) => {
+  Object.entries(data).forEach(([key, value]) => {
+    toastr.error(key + ": " + value);
+  });
 };

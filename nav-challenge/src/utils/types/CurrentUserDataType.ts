@@ -1,9 +1,9 @@
 export interface CurrentUserDataType {
   token: string;
   username: string;
-  first_name: string;
-  last_name: string;
-  user_id: number;
+  firstName: string;
+  lastName: string;
+  userId: number;
   email: string;
   isInfluencer: boolean;
   hasSelectedInfluencers: boolean;

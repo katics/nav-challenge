@@ -1,8 +1,13 @@
 import { FC, useContext } from "react";
+
 import { SignUpFormProps } from "../../../utils/types/SignUpFormProps";
+
 import { SignUpContext } from "../../containers/signUpContainer/SignUpContainer";
+
 import SignInSignUpLayout from "../../layout/signUpSignInLayout/SignInSignUpLayout";
+
 import SignUpForm from "../../signUpForm/SignUpForm";
+
 import "./SignUpPage.scss";
 
 const SignUpPage: FC = () => {

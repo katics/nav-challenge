@@ -1,13 +1,14 @@
 import { UserDataType } from "../../utils/types/UserDataType";
+
 import { SIGNUP_USER } from "./UserActionTypes";
 
 const initialState: UserDataType = {
   currentUser: {
     token: "",
     username: "",
-    first_name: "SASA",
-    last_name: "",
-    user_id: 0,
+    firstName: "",
+    lastName: "",
+    userId: 0,
     email: "",
     isInfluencer: false,
     hasSelectedInfluencers: false,
@@ -22,7 +23,7 @@ const initialState: UserDataType = {
   },
 };
 
-const user = (state = initialState, action: any = {}): UserDataType => {
+const userReducer = (state = initialState, action: any = {}): UserDataType => {
   switch (action.type) {
     case SIGNUP_USER:
       return {
@@ -34,4 +35,4 @@ const user = (state = initialState, action: any = {}): UserDataType => {
   }
 };
 
-export default user;
+export default userReducer;

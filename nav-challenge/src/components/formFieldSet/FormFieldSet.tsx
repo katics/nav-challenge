@@ -14,21 +14,17 @@ const FormFieldSet: FC<FormFieldSetProps> = ({
   inputValue,
   placeHolder,
   handleChange,
-}) => {
-  return (
-    <fieldset>
-      <label>{label}</label>
-      <input
-        type={type}
-        placeholder={placeHolder}
-        className="form-control"
-        value={inputValue}
-        onChange={e => {
-          handleChange(e);
-        }}
-      />
-    </fieldset>
-  );
-};
+}) => (
+  <fieldset>
+    <label>{label}</label>
+    <input
+      type={type}
+      placeholder={placeHolder}
+      className="form-control"
+      value={inputValue}
+      onChange={handleChange}
+    />
+  </fieldset>
+);
 
 export default FormFieldSet;

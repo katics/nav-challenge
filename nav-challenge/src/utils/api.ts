@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import { UserSignUpDataType } from "../utils/types/UserSignUpDataType";
 
 const apiUrl = "https://randomlyapi.symphony.is";

@@ -1,17 +1,20 @@
-import { FC } from "react";
+import { FC, ChangeEvent, SyntheticEvent } from "react";
+
 import { UserSignUpDataType } from "../../utils/types/UserSignUpDataType";
+
 import FormFieldSet from "../formFieldSet/FormFieldSet";
+
 import "./SignUpForm.scss";
 
 interface SignUpFormProps {
   signUpData: UserSignUpDataType;
-  firstNameChanged: (e: any) => void;
-  lastNamChanged: (e: any) => void;
-  emailChanged: (e: any) => void;
-  usernameChanged: (e: any) => void;
-  passwordChanged: (e: any) => void;
-  dateOfBirthChanged: (e: any) => void;
-  singUpClick: (e: any) => void;
+  firstNameChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  lastNamChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  emailChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  usernameChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  passwordChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  dateOfBirthChanged: (e: ChangeEvent<HTMLInputElement>) => void;
+  singUpClick: (e: SyntheticEvent) => void;
   selectedDate: string;
 }
 //CHECK if component props are necessary or we can us context from container component ?

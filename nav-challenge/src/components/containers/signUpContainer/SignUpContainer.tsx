@@ -1,22 +1,19 @@
 import moment from "moment";
-import React, { FC, useState } from "react";
-import AppProvider, {
-  appContext,
-  useDispatchApp,
-} from "../../../store/AppProvider";
-import store from "../../../store/Index";
-import { fetchRegisterUser } from "../../../store/user/UserActions";
+
+import React, { ChangeEvent, FC, useEffect, useState } from "react";
+
+import { useDispatch } from "react-redux";
+
+import { registerUser } from "../../../store/user/UserActions";
+
+import { SELECTED_DATE_FORMAT } from "../../../utils/types/CommonConsts";
+
 import { SignUpFormProps } from "../../../utils/types/SignUpFormProps";
+
 import { UserSignUpDataType } from "../../../utils/types/UserSignUpDataType";
+
 import SignUpPage from "../../pages/signUpPage/SignUpPage";
 
-const SignUpProvider: FC = () => {
-  return (
-    <AppProvider store={store} context={appContext}>
-      <SignUpContainer />
-    </AppProvider>
-  );
-};
 export const SignUpContext = React.createContext({} as SignUpFormProps);
 const SignUpContainer: FC = () => {
   const userSignUpData: UserSignUpDataType = {
@@ -28,21 +25,24 @@ const SignUpContainer: FC = () => {
     dateOfBirth: "",
   };
 
-  const userDispatch = useDispatchApp();
+  const userDispatch = useDispatch();
 
   const [signUpDataRequest, setSignUpDataRequest] = useState(userSignUpData);
   const [selectedDate, setSelectedDate] = useState("");
 
-  const signUpClick = (e: any) => {
-    e.preventDefault();
-
+  useEffect(() => {
     const selectedDateForRequest = moment(selectedDate);
 
-    signUpDataRequest.dateOfBirth = selectedDateForRequest.isValid()
-      ? selectedDateForRequest.format("DD/MM/YYYY")
-      : "";
+    selectedDateForRequest.isValid() &&
+      setSignUpDataRequest({
+        ...signUpDataRequest,
+        dateOfBirth: selectedDateForRequest.format(SELECTED_DATE_FORMAT),
+      });
+  }, [selectedDate]);
 
-    userDispatch(fetchRegisterUser(signUpDataRequest));
+  const signUpClick = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    userDispatch(registerUser(signUpDataRequest));
   };
 
   const firstNameChanged = (e: any) => {
@@ -103,4 +103,4 @@ const SignUpContainer: FC = () => {
   );
 };
 
-export default SignUpProvider;
+export default SignUpContainer;

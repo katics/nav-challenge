@@ -1,7 +1,8 @@
 import { FC, ReactNode } from "react";
 
-import "./Layout.scss";
 import "toastr/build/toastr.css";
+
+import "./Layout.scss";
 
 interface LayoutProps {
   children?: ReactNode;

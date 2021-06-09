@@ -1,8 +1,11 @@
 import { FC } from "react";
+
 import { Switch, Route } from "react-router-dom";
 
 import { ROUTE_COMPONENTS, COMPONENT_PAGES } from "./AppRoutes";
+
 import Dashboard from "../components/dashboard/Dashboard";
+
 import SignUpContainer from "../components/containers/signUpContainer/SignUpContainer";
 
 const components = {
